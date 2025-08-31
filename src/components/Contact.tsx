@@ -141,7 +141,7 @@ Message: ${formData.message}`;
                   value={formData.company}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors"
-                  placeholder="Your company name"
+                  placeholder="Product name"
                 />
               </div>
 

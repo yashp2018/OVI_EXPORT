@@ -67,7 +67,7 @@ const Gallery: React.FC = () => {
       src: "./founder.jpg",
       category: 'team',
       title: 'Our Founder',
-      description: 'Shubham Thete, Founder & Director'
+      description: 'Vikram Berad, Founder & Director'
     }
   ];
 

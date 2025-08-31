@@ -10,6 +10,7 @@ const Contact: React.FC = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -18,22 +19,24 @@ const Contact: React.FC = () => {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', company: '', message: '' });
-    }, 3000);
-  };
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+
+  const phoneNumber = "919313798295"; // ✅ Replace with your number (with country code)
+  const message = `Hello, my name is ${formData.name}.
+Email: ${formData.email}
+Company: ${formData.company}
+Message: ${formData.message}`;
+
+  // Open WhatsApp with pre-filled message
+  window.open(
+    `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
+    "_blank"
+  );
+
+  // Optionally reset form
+  setFormData({ name: "", email: "", company: "", message: "" });
+};
 
   const contactInfo = [
     {
@@ -102,9 +105,11 @@ const Contact: React.FC = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors"
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors
+                      ${error ? "border-red-500" : "border-gray-300"}`}
                     placeholder="your@email.com"
                   />
+                  {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
                 </div>
               </div>
 

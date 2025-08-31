@@ -22,7 +22,17 @@ const Contact: React.FC = () => {
 const handleSubmit = (e: React.FormEvent) => {
   e.preventDefault();
 
-  const phoneNumber = "919313798295"; // ✅ Replace with your number (with country code)
+  // ✅ Email validation
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@(gmail|yahoo|outlook)\.com$/;
+  if (!emailPattern.test(formData.email)) {
+    setError("Please enter a valid email (only Gmail, Yahoo, or Outlook allowed).");
+    return;
+  }
+  setError(null);
+
+  setIsSubmitting(true);
+
+  const phoneNumber = "919313798295"; // Replace with your number (with country code)
   const message = `Hello, my name is ${formData.name}.
 Email: ${formData.email}
 Company: ${formData.company}
@@ -34,9 +44,16 @@ Message: ${formData.message}`;
     "_blank"
   );
 
-  // Optionally reset form
-  setFormData({ name: "", email: "", company: "", message: "" });
+  setIsSubmitting(false);
+  setIsSubmitted(true);
+
+  // Reset form after 3 sec
+  setTimeout(() => {
+    setIsSubmitted(false);
+    setFormData({ name: "", email: "", company: "", message: "" });
+  }, 3000);
 };
+
 
   const contactInfo = [
     {

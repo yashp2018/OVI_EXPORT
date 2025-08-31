@@ -132,7 +132,7 @@ Message: ${formData.message}`;
 
               <div>
                 <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                  Company
+                   What Requires
                 </label>
                 <input
                   type="text"

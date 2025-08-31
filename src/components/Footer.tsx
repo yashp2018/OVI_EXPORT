@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
               <img 
-                src="/logo3-removebg-preview.png" 
+                src="./logo3-removebg-preview.png" 
                 alt="Company Logo" 
                 className="h-14 w-auto"
               />

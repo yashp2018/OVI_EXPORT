@@ -9,7 +9,7 @@ const Team: React.FC = () => {
       role: 'Founder & Director',
       description: 'A farmer son with deep roots in agriculture, Vikram leads the company with hands-on experience in farming and a strong vision for global trade. He started with local supply and expanded into national and now international markets, focusing on quality, farmer partnerships, and long-term growth.',
       icon: <Award className="w-12 h-20" />,
-      image: "/founder.jpg",
+      image: "./founder.jpg",
       
       color: 'from-emerald-500 to-green-500',
       bgColor: 'bg-emerald-50'

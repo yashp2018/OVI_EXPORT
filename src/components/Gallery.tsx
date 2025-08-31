@@ -64,7 +64,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: 9,
-      src: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
+      src: "./founder.jpg",
       category: 'team',
       title: 'Our Founder',
       description: 'Shubham Thete, Founder & Director'

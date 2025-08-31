@@ -89,7 +89,7 @@ const Process: React.FC = () => {
           <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-emerald-300 to-green-300 transform -translate-y-1/2">
             {/* Moving Truck */}
             <div 
-              className="absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 transition-all duration-1000 ease-in-out"
+              className="absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 transition-all duration-1000000000 ease-in-out"
               style={{ left: truckPosition() }}
             >
               <div className="bg-emerald-600 p-2 rounded-full shadow-lg">
